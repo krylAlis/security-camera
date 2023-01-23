@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+bool isRecording = false;
+
+void startRecording() {
+    isRecording = true;
+    std::cout << "Recording started." << std::endl;
+}
+
+void stopRecording() {
+    isRecording = false;
+    std::cout << "Recording stopped." << std::endl;
+}
+
+int main() {
+    std::cout << "Welcome to the security camera." << std::endl;
+    std::cout << "Type 'start' to start recording or 'stop' to stop recording." << std::endl;
+    std::string input;
+    while (true) {
+        std::cin >> input;
+        if (input == "start") {
+            startRecording();
+        } else if (input == "stop") {
+            stopRecording();
+        } else {
+            std::cout << "Invalid command." << std::endl;
+        }
+    }
+    return 0;
+}
